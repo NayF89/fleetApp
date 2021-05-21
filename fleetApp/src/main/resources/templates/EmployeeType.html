@@ -25,19 +25,6 @@
 <link href="css/style.css" rel="stylesheet">
 <link href="css/style-responsive.css" rel="stylesheet" />
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-<!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
-
-<!-- =======================================================
-      Theme Name: NiceAdmin
-      Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
 </head>
 
 <body>
@@ -149,7 +136,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h3 class="page-header">
-							<i class="fa fa fa-bars"></i> Location
+							<i class="fa fa fa-bars"></i> HR Settings
 						</h3>
 						<ol class="breadcrumb">
 							<li><i class="fa fa-home"></i><a class=""
@@ -160,8 +147,8 @@
 				</div>
 				<!-- page start-->
 				<button type="button" class="btn btn-primary" data-toggle="modal"
-					data-target="#addModal">Add new Country</button>
-				<h1>List of Countries</h1>
+					data-target="#addModal">Add new employee type</button>
+				<h1>Employee Type Database</h1>
 				<table class="table">
 					<thead>
 						<tr>
@@ -173,8 +160,6 @@
 						<tr th:each="employeeType:${employeeTypes}">
 							<td th:text="${employeeType.id}"></td>
 							<td th:text="${employeeType.description}"></td>
-
-
 						</tr>
 					</tbody>
 				</table>
@@ -182,17 +167,6 @@
 			</section>
 		</section>
 		<!--main content end-->
-		<div class="text-right">
-			<div class="credits">
-				<!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-          -->
-				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-			</div>
-		</div>
 	</section>
 	<!-- container section end -->
 	<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
@@ -200,18 +174,18 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">New country</h5>
+					<h5 class="modal-title" id="exampleModalLabel">New employee type</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form th:action="@{countries/addNew}" method="post">
+					<form th:action="@{employeeTypes/addNew}" method="post">
 						<div class="form-group">
-							<label for="recipient-name" class="col-form-label">Name:</label>
-							<input type="text" class="form-control" id="recipient-name"
-								name="name">
+							<label for="recipient-description" class="col-form-label">Description:</label>
+							<input type="text" class="form-control" id="recipient-desciption"
+								name="description">
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Submit</button>
