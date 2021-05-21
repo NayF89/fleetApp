@@ -14,7 +14,7 @@ public class CountryController {
 	
 	@Autowired private CountryService countryService;
 	
-	//Get All Countrys
+	//Get All Countries
 	@GetMapping("countries")
 	public String findAll(Model model){		
 		model.addAttribute("countries", countryService.findAll());
