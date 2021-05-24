@@ -25,7 +25,7 @@ public class EmployeeController {
 	@Autowired private CountryService countryService;
 	
 	//Get All Employees
-	@GetMapping("employees")
+	@GetMapping(value="employees")
 	public String findAll(Model model){
 		model.addAttribute("countries", countryService.findAll());
 		model.addAttribute("states", stateService.findAll());

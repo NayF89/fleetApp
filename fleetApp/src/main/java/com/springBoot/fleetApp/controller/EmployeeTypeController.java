@@ -17,7 +17,7 @@ public class EmployeeTypeController {
 	@Autowired private EmployeeTypeService employeeTypeService;
 	
 	//Get All EmployeeTypes
-	@GetMapping("employeeTypes")
+	@GetMapping(value="employeeTypes")
 	public String findAll(Model model){		
 		model.addAttribute("employeeTypes", employeeTypeService.findAll());
 		return "employeeType";

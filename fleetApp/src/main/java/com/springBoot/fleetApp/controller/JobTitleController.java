@@ -16,7 +16,7 @@ public class JobTitleController {
 	@Autowired private JobTitleService jobTitleService;
 	
 	//Get All JobTitles
-	@GetMapping("jobTitles")
+	@GetMapping(value="jobTitles")
 	public String findAll(Model model){		
 		model.addAttribute("jobTitles", jobTitleService.findAll());
 		return "jobTitle";
